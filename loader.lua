@@ -11,7 +11,10 @@
 
 -- VEGA Y
 -- works on all executors with level 7+
--- VERSION 2.1 UPDATE
+-- VERSION 2.2 UPDATE
+
+-- xd sorry for the fucked up horizontal gui :(
+
 
 local ScreenGui = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
@@ -21,11 +24,17 @@ local executor1 = Instance.new("TextButton")
 local executor2 = Instance.new("TextButton")
 local executor3 = Instance.new("TextButton")
 local close = Instance.new("TextButton")
+local change = Instance.new("TextButton")
 local openmain = Instance.new("Frame")
 local open = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
-
---Images
+local horizont = Instance.new("Frame")
+local horiz = Instance.new("ImageLabel")
+local infy = Instance.new("TextButton")
+local jailm = Instance.new("TextButton")
+local jailau = Instance.new("TextButton")
+local clos = Instance.new("TextButton")
+local unchange = Instance.new("TextButton")
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -36,7 +45,6 @@ main.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
 main.BackgroundTransparency = 1.000
 main.Position = UDim2.new(0.12575379, 0, 0.120245397, 0)
 main.Size = UDim2.new(0, 293, 0, 618)
-main.Visible = false
 
 vegax.Name = "vegax"
 vegax.Parent = main
@@ -45,9 +53,10 @@ vegax.BackgroundTransparency = 1.000
 vegax.BorderSizePixel = 0
 vegax.Position = UDim2.new(-1.1920929e-07, 0, -0.121359229, 0)
 vegax.Size = UDim2.new(1.00000036, 0, 1.12135923, 0)
-vegax.Image = "rbxassetid://7283656235"
+vegax.Image = "rbxassetid://7290230550"
 vegax.Active = true
 vegax.Draggable = true
+vegax.Visible = false
 
 TextLabel.Parent = vegax
 TextLabel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
@@ -89,6 +98,7 @@ executor2.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SiLeNSwOrD/OwlHub/master/OwlHub.txt",true))()
 end)
 
+
 executor3.Name = "executor3"
 executor3.Parent = vegax
 executor3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -116,8 +126,25 @@ close.Text = ""
 close.TextColor3 = Color3.fromRGB(0, 0, 0)
 close.TextSize = 14.000
 close.MouseButton1Down:connect(function()
-	main.Visible = false
+	vegax.Visible = false
+	horiz.Visible = false
 	openmain.Visible = true
+end)
+
+change.Name = "change"
+change.Parent = vegax
+change.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+change.BackgroundTransparency = 1.000
+change.BorderSizePixel = 0
+change.Position = UDim2.new(0.129692942, 0, 0.913076758, 0)
+change.Size = UDim2.new(0, 217, 0, 36)
+change.Font = Enum.Font.SourceSans
+change.Text = ""
+change.TextColor3 = Color3.fromRGB(0, 0, 0)
+change.TextSize = 14.000
+change.MouseButton1Down:connect(function()
+	vegax.Visible = false
+	horiz.Visible = true
 end)
 
 openmain.Name = "openmain"
@@ -137,9 +164,101 @@ open.Text = "Loader"
 open.TextColor3 = Color3.fromRGB(170, 170, 170)
 open.TextSize = 20.000
 open.MouseButton1Down:connect(function()
-	main.Visible = true
+	vegax.Visible = true
+	horiz.Visible = false
 	openmain.Visible = false
 end)
 
 UICorner.Parent = open
+
+horizont.Name = "horizont"
+horizont.Parent = ScreenGui
+horizont.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+horizont.BackgroundTransparency = 1.000
+horizont.Position = UDim2.new(0.316666663, 0, 0.0355828032, 0)
+horizont.Size = UDim2.new(0.454687506, 0, 0.391411036, 0)
+
+horiz.Name = "horiz"
+horiz.Parent = horizont
+horiz.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+horiz.BackgroundTransparency = 1.000
+horiz.Position = UDim2.new(6.99142717e-08, 0, -0.0615856685, 0)
+horiz.Size = UDim2.new(1.130584, 0, 1.06158566, 0)
+horiz.Image = "rbxassetid://7290281441"
+horiz.Active = true
+horiz.Draggable = true
+horiz.Visible = false
+
+infy.Name = "infy"
+infy.Parent = horiz
+infy.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+infy.BackgroundTransparency = 1.000
+infy.Position = UDim2.new(0.031425368, 0, 0.253952682, 0)
+infy.Size = UDim2.new(0, 32, 0, 43)
+infy.Font = Enum.Font.SourceSans
+infy.Text = ""
+infy.TextColor3 = Color3.fromRGB(0, 0, 0)
+infy.TextSize = 14.000
+
+jailm.Name = "jailm"
+jailm.Parent = horiz
+jailm.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+jailm.BackgroundTransparency = 1.000
+jailm.Position = UDim2.new(0.343434393, 0, 0.253952682, 0)
+jailm.Size = UDim2.new(0, 33, 0, 43)
+jailm.Font = Enum.Font.SourceSans
+jailm.Text = ""
+jailm.TextColor3 = Color3.fromRGB(0, 0, 0)
+jailm.TextSize = 14.000
+infy.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",true))()
+end)
+
+
+jailau.Name = "jailau"
+jailau.Parent = horiz
+jailau.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+jailau.BackgroundTransparency = 1.000
+jailau.Position = UDim2.new(0.66329968, 0, 0.253952682, 0)
+jailau.Size = UDim2.new(0, 34, 0, 43)
+jailau.Font = Enum.Font.SourceSans
+jailau.Text = ""
+jailau.TextColor3 = Color3.fromRGB(0, 0, 0)
+jailau.TextSize = 14.000
+jailau.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/alohabeach/Main/master/Scripts/Main.lua",true))()
+end)
+
+
+clos.Name = "clos"
+clos.Parent = horiz
+clos.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+clos.BackgroundTransparency = 1.000
+clos.Position = UDim2.new(0.690235794, 0, 0.797293305, 0)
+clos.Size = UDim2.new(0, 255, 0, 45)
+clos.Font = Enum.Font.SourceSans
+clos.Text = ""
+clos.TextColor3 = Color3.fromRGB(0, 0, 0)
+clos.TextSize = 14.000
+clos.MouseButton1Down:connect(function()
+	vegax.Visible = false
+	horiz.Visible = false
+	openmain.Visible = true
+end)
+
+unchange.Name = "unchange"
+unchange.Parent = horiz
+unchange.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+unchange.BackgroundTransparency = 1.000
+unchange.Position = UDim2.new(0.0493826456, 0, 0.797293305, 0)
+unchange.Size = UDim2.new(0, 259, 0, 45)
+unchange.Font = Enum.Font.SourceSans
+unchange.Text = ""
+unchange.TextColor3 = Color3.fromRGB(0, 0, 0)
+unchange.TextSize = 14.000
+unchange.MouseButton1Down:connect(function()
+	vegax.Visible = true
+	horiz.Visible = false
+end)
+
 
